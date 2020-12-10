@@ -16,7 +16,7 @@ public class Produto {
 	    setCodigo(codigo);
 	}
 	
-	private void setNome(String nome) {
+	void setNome(String nome) {
 		this.nome = nome;
 	}
 

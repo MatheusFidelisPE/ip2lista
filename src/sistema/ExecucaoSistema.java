@@ -6,14 +6,22 @@ import java.util.List;
 public class ExecucaoSistema {
 
 	public static void main(String[] args) {
-		Produto p1 = new Produto();
-		Produto p2 = new Produto("Farinha", "12345");
-		Produto p3 = new Produto();
-		Produto p4 = new Produto("Fejão", "334455");
-		Produto p5 = new Produto("Sandália", "445566");
+		Produto p1 = new Produto("Teclado", "1");
+		Produto p2 = new Produto("Mouse", "2");
 		
-		List<Produto> produtos = Arrays.asList(p1, p2, p3, p4, p5);
+		Estoque e1 = new Estoque(p1, 20, 15);
+		Estoque e2 = new Estoque(p2, 30, 10);
 		
-		produtos.stream().forEach(System.out::println);
+		e1.darBaixa(5);
+		e2.reporEstoque(19);
+		
+		System.out.println(e1.relatorio());
+		System.out.println(e2.relatorio());
+		
+		p1.setNome("Teclado Virtual");
+		System.out.println(e1.relatorio());
+		System.out.println(e2.relatorio());
+		
+		
 	}
 }
