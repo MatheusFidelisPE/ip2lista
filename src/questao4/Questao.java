@@ -1,57 +1,53 @@
 package questao4;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
-public class Questao {
 
-	public static void main(String[] args){
+public class Questao{
+	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		
-		System.out.print("Informe a data no formato [dd/MM/yyyy]: ");
+		DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		System.out.print("Data no formato dd/MM/yyyy: ");
 		String dataDigitada = scan.next();
 		
-		// Convertendo texto lido em data.
-		LocalDate data = LocalDate.parse(dataDigitada, formatar);
-		// Pegando a data atual.
-		LocalDate hoje = LocalDate.now();
+		//Questão 4.a ->  pegando uma string e transformando em um objeto do tipo LocalDate.
+		LocalDate data = LocalDate.parse(dataDigitada, formatador);
 		
-		long diferencaEmDias = ChronoUnit.DAYS.between(hoje, data);
-		diferencaEmDias = Math.abs(diferencaEmDias);
+		//Questão 4.b -> Pegando data de hj e calculando a diferença para a data digitada em dias.
+		LocalDate dataHoje = LocalDate.now();
+		Period periodo = Period.between(data, dataHoje) ;
+		System.out.println(Math.abs(periodo.getDays()));
 		
+		//Questão 4.c -> Somando 110 dias a data digitada pelo usuario.
+		System.out.println(data.plusDays(110).format(formatador));
 		
-		System.out.printf("Difirença em dias: %d\n", diferencaEmDias);
+		//Questão 4.d -> ALterando o mês da data informada pelo usuario.
+		System.out.println(data.withMonth(8).format(formatador));
 		
-		System.out.println("A data somada a 110 dias resulta: " + data.plusDays(110));
-		 
-		LocalDate dataAlterandoMes;
-		dataAlterandoMes = data.withMonth(8);
-		String formatada = dataAlterandoMes.format(formatar);
+		//Questão 4.e -> Alterando a formatação da data.
+		DateTimeFormatter formatadorParaExtenso = DateTimeFormatter.ofPattern("dd-MMM-YYYY");
+		System.out.println(data.format(formatadorParaExtenso));
 		
-		System.out.println("Data com mês em agosto: " + formatada);
-		System.out.println("Data com mês em agosto: " + data);
-
-		
-		System.out.print("Informe a data 1 no formato [dd/MM/yyyy]: ");
+		//Questão 4.f ->  Calculando o número de dias úteis em um periodo.
+		System.out.print("Informe a data no formato dd/MM/yyy: ");
 		String dataDigitada1 = scan.next();
+		LocalDate data1 = LocalDate.parse(dataDigitada1, formatador);
 		
-		System.out.print("Informe a data 2 no formato [dd/MM/yyyy]: ");
+		System.out.print("Informe a data no formato dd/MM/yyy: ");
 		String dataDigitada2 = scan.next();
+		LocalDate data2 = LocalDate.parse(dataDigitada2, formatador);
 		
-		LocalDate data1 = LocalDate.parse(dataDigitada1, formatar);
-		LocalDate data2 = LocalDate.parse(dataDigitada2, formatar);
+		System.out.println(Questao.calcularDiasuteis(data1, data2));
 		
-		int diasContaveis =  Questao.calcularDiasuteis(data1,data2);
-		System.out.println("Qte de dias Uteis: " + diasContaveis);
 		
-		scan.close();
-		LocalDate novaData = LocalDate.parse("10/10/2010");
-		System.out.println(novaData);
+		System.out.println(data.format(formatador));
+		
 	}
-	//Recebe duas datas e retorna um inteiro referente a quantidade de dias úteis.
 	public static int calcularDiasuteis(LocalDate data1, LocalDate data2) {
 		
 		long diferencaEmDias = ChronoUnit.DAYS.between(data1, data2);
@@ -71,5 +67,3 @@ public class Questao {
 		return contagemDias;
 	}
 }
-	
-	
