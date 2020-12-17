@@ -1,6 +1,7 @@
 package sistema;
 
 public class Estoque {
+	
 	private Produto produto;
 	private int qteAtual;
 	private int qteMin;
@@ -13,13 +14,23 @@ public class Estoque {
 		this.qteAtual = qteAtual;
 		this.qteMin = qteMin;
 	}
+	void mudarQtdMinima(int qtdMinima) {
+		this.qteMin += qtdMinima;
+	}
+	
 	void reporEstoque(int soma) {
 		this.qteAtual += soma;
 	}
+	
 	void darBaixa(int subtrair) {
-		this.qteAtual -= subtrair;
+		if(this.qteMin <= this.qteAtual - subtrair) {
+			this.qteAtual -= subtrair;
+		}else {
+			System.out.printf("Impossível retirar  esta quantidade. Retire até %d unidades.\n", qteAtual - qteMin);
+		}
 	}
-	private int getQteAtual() {
+	
+	public int getQteAtual() {
 		return this.qteAtual;
 	}
 	private int getQteMin() {

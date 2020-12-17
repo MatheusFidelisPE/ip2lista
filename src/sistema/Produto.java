@@ -5,8 +5,8 @@ public class Produto {
 	final static String nomeVazio = "Sem Nome";
 	final static String codigoVazio = "Sem Código";
 	
-	String nome;
-	String codigo;
+	private String nome;
+	private String codigo;
 	
 	Produto() {
 		this(nomeVazio, codigoVazio);
