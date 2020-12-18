@@ -2,11 +2,11 @@ package questao5;
 
 public class ItemVenda {
 
-	int quantidade;
-	Produto produto;
+	private int quantidade;
+	private Produto produto;
 	
 	ItemVenda(Produto produto, int quantidade){
-		this.produto = produto;
+		setProduto(produto);
 		this.quantidade = quantidade;
 	}
 	double calcularTotal() {

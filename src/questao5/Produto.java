@@ -3,7 +3,7 @@ package questao5;
 public class Produto {
 	
 	int codigo;
-	String nome;
+	private String nome;
 	String descricao;
 	private double preco;
 	

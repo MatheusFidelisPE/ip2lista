@@ -6,12 +6,16 @@ import java.time.format.DateTimeFormatter;
 
 public class Cliente {
 
-	String cpf;
-	String nome;
+	private String cpf;
+	private String nome;
 	LocalDate dataNascimento;
 	DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
-	
+	Cliente(String nome, String cpf, String dataNascimento){
+		setCpf(cpf);
+		setNome(nome);
+		setDataNascimento(dataNascimento);
+	}
 	public String getCpf() {
 		return cpf;
 	}
