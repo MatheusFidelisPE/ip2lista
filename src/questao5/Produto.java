@@ -1,11 +1,16 @@
 package questao5;
 
 public class Produto {
+	
 	int codigo;
 	String nome;
 	String descricao;
 	private double preco;
-
+	
+	Produto(String nome, double preco){
+		this.nome = nome;
+		this.preco = preco;
+	}
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}

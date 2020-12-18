@@ -1,9 +1,8 @@
 package questao5;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 
 public class Cliente {
 
@@ -11,7 +10,7 @@ public class Cliente {
 	String nome;
 	LocalDate dataNascimento;
 	DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+	
 	
 	public String getCpf() {
 		return cpf;
@@ -38,7 +37,7 @@ public class Cliente {
 	}
 
 	long calcularIdade() {
-		long diferencaAnos = ChronoUnit.YEARS.between(LocalDate.now(), dataNascimento);
-		return diferencaAnos;
+		Period periodo = Period.between(dataNascimento, LocalDate.now());
+		return periodo.getYears();
 	}
 }
