@@ -24,6 +24,7 @@ public class TesteVendaMain {
 		venda1.adicionarItem(item3);
 		venda1.adicionarItem(item4);
 		
+		
 		venda1.listarItensVenda();
 		
 		
