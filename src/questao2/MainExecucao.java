@@ -91,7 +91,7 @@ public class MainExecucao {
 		for(Pessoa pessoa : rP.listarGerentesDaArea("Carga")) {
 			System.out.println(pessoa);
 		}
-		
 	}
+	
 
 }
