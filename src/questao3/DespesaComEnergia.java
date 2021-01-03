@@ -22,5 +22,4 @@ public class DespesaComEnergia extends Despesa{
 		}
 		return valorTotal;
 	}
-
 }

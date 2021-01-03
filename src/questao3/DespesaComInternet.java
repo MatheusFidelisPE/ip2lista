@@ -21,6 +21,4 @@ public class DespesaComInternet extends Despesa{
 		}
 		return valorTotal;
 	}
-	
-	
 }

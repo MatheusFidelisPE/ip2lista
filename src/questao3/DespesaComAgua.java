@@ -20,7 +20,6 @@ public class DespesaComAgua extends Despesa{
 			valorTotal += ((totalM3Aduterado - 10)*5);
 			return valorTotal;
 		}
-		
 		return valorTotal + 45;
 	}
 }

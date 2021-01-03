@@ -1,22 +1,15 @@
 package questao3;
 
-import java.time.LocalDateTime;
-
 public class LicencaPlus extends Receita{
 	
 	private int totalContas;
 	
-	public LocalDateTime getData() {
-		return null;
-	}
-
-	public String getDescricao() {
-		return "Licença plus";
+	LicencaPlus(String data, String descricao, int totalContas) {
+		super(data, descricao);
+		this.descricao = descricao;		
 	}
 	
 	public double calcularTotal() {
 		return this.totalContas*150;
 	}
-	
-
 }
