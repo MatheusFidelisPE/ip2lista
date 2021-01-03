@@ -1,29 +1,14 @@
 package questao3;
 
-import java.time.LocalDateTime;
-
 public class DespesaComEnergia extends Despesa{
 
 	private double kWh;
-	@Override
-	public LocalDateTime getData() {
-		// TODO Auto-generated method stub
-		return null;
+
+	public DespesaComEnergia(String data, String descricao, double kWh ) {
+		super(data, descricao);
+		this.kWh = kWh;
 	}
 
-	@Override
-	public String getDescricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getTipo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public double calcularTotal() {
 		double valorTotal;
 		valorTotal = 0.5*kWh + (int)(kWh/100)*1.2;

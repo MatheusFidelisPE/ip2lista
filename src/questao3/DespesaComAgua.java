@@ -1,30 +1,14 @@
 package questao3;
 
-import java.time.LocalDateTime;
-
 public class DespesaComAgua extends Despesa{
 
 	private double totalM3;
 	
-	@Override
-	public LocalDateTime getData() {
-		// TODO Auto-generated method stub
-		return null;
+	public DespesaComAgua(String data, String descricao, double totalM3) {
+		super(data, descricao);
+		this.totalM3 = totalM3;
 	}
 
-	@Override
-	public String getDescricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getTipo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public double calcularTotal() {
 		double valorTotal = 0, totalM3Aduterado;
 		totalM3Aduterado = totalM3;
@@ -39,5 +23,4 @@ public class DespesaComAgua extends Despesa{
 		
 		return valorTotal + 45;
 	}
-
 }

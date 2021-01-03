@@ -7,7 +7,9 @@ public abstract class Receita implements Transacao {
 	LocalDateTime data;
 	String descricao;
 	
-	public abstract String getTipo();
+	public String getTipo() {
+		return "RECEITA";
+	}
 	public abstract double calcularTotal();
 	
 	

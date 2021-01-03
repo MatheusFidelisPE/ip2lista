@@ -1,28 +1,14 @@
 package questao3;
 
-import java.time.LocalDateTime;
-
 public class DespesaComInternet extends Despesa{
 
 	private double dadosTrafegados;
-	public LocalDateTime getData() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public DespesaComInternet(String data, String descricao, double dadosTrafegados) {
+		super(data, descricao);
+		this.dadosTrafegados = dadosTrafegados;
 	}
-
-	@Override
-	public String getDescricao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getTipo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
+	
 	public double calcularTotal() {
 		double valorTotal = 0;
 		double dadosTrafegadosPerene = this.dadosTrafegados;
