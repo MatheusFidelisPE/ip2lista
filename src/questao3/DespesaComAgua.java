@@ -16,9 +16,8 @@ public class DespesaComAgua extends Despesa{
 			totalM3Aduterado = totalM3 - (totalM3 - 20);
 			valorTotal += (this.totalM3 - 20)*6 ;
 		}
-		else if(totalM3Aduterado >= 10 && totalM3Aduterado <= 20) {
+		if(totalM3Aduterado >= 10 && totalM3Aduterado <= 20) {
 			valorTotal += ((totalM3Aduterado - 10)*5);
-			return valorTotal;
 		}
 		return valorTotal + 45;
 	}

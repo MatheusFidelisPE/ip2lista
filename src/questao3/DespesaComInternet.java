@@ -14,9 +14,9 @@ public class DespesaComInternet extends Despesa{
 		double dadosTrafegadosPerene = this.dadosTrafegados;
 		if(dadosTrafegadosPerene >= 500) {
 			valorTotal += (590 + (dadosTrafegadosPerene - 500)*5.1);
-		}else if(dadosTrafegadosPerene > 20 && dadosTrafegadosPerene <= 100) {
+		}else if(dadosTrafegadosPerene > 100 && dadosTrafegadosPerene < 500) {
 			valorTotal += (240 + (dadosTrafegadosPerene - 100) * 4.4);
-		}else if(dadosTrafegadosPerene <= 20) {
+		}else if(dadosTrafegadosPerene >= 20 && dadosTrafegadosPerene <= 100 ) {
 			valorTotal += (90.9 + (dadosTrafegadosPerene - 20)*3.9);
 		}
 		return valorTotal;

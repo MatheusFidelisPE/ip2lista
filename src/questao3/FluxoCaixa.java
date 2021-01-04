@@ -78,7 +78,7 @@ public class FluxoCaixa {
 			}
 		}
 		for(Transacao trans : this.transacoes) {
-			if(trans.getData().getMonthValue() == mes && trans.getData().getYear() == ano) {
+			if(trans.getData().getMonthValue() == mes && trans.getData().getYear() == ano && trans.getTipo().equals("DESPESA")) {
 				somaPercentualDespesas += trans.calcularTotal();
 			}
 		}
