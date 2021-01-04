@@ -6,7 +6,7 @@ public class LicencaPlus extends Receita{
 	
 	LicencaPlus(String data, String descricao, int totalContas) {
 		super(data, descricao);
-		this.descricao = descricao;		
+		this.totalContas = totalContas;
 	}
 	
 	public double calcularTotal() {

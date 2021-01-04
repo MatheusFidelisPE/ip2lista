@@ -58,4 +58,8 @@ public abstract class Receita implements Transacao {
 			return false;
 		return true;
 	}
+	
+	public String toString() {
+		return String.format("Descricao: %-12s | Valor: %.2f\n", this.getDescricao(), this.calcularTotal());
+	}
 }
