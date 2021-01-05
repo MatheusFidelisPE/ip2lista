@@ -1,5 +1,7 @@
 package questao1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class BilheteDeLoteria {
@@ -43,7 +45,6 @@ public class BilheteDeLoteria {
 		return contidoNosDois;
 	}
 	
-	
 	public String toString() {
 		return super.toString();
 	}
@@ -56,11 +57,18 @@ public class BilheteDeLoteria {
 		bilhete = bilhete + " ]";
 		return bilhete;
 	}
-
+	
+	public List<Integer> getBilhetesNumeros() {
+		List<Integer> bilhete = new ArrayList<Integer>();
+		for(int num : this.bilhetesNumeros) {
+			bilhete.add(num);
+		}
+		bilhete.sort(null);
+		return bilhete;
+	}
+	
 	public void setBilhetesNumeros() {
 		this.bilhetesNumeros = null;
 	}
-	
-	
 	
 }
